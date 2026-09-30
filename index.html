@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fútbol Extremeño: resultados, clasificaciones, equipos y jugadores del fútbol modesto de Extremadura."
+    />
+    <title>Fútbol Extremeño</title>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/">
+          <span class="brand-mark">⚽</span>
+          <span>Fútbol <strong>Extremeño</strong></span>
+        </a>
+
+        <button
+          class="menu-toggle"
+          type="button"
+          aria-label="Abrir menú"
+          aria-expanded="false"
+          aria-controls="main-navigation"
+        >
+          ☰
+        </button>
+
+        <nav id="main-navigation" class="main-navigation" aria-label="Navegación principal">
+          <a href="#competiciones">Competiciones</a>
+          <a href="#resultados">Resultados</a>
+          <a href="#clasificacion">Clasificación</a>
+          <a href="#equipos">Equipos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="container hero-content">
+          <span class="eyebrow">Fútbol modesto de Extremadura</span>
+          <h1>Todo el fútbol extremeño en un solo lugar</h1>
+          <p>
+            Resultados, clasificaciones, equipos y jugadores de las
+            competiciones extremeñas.
+          </p>
+
+          <a class="button" href="#competiciones">Ver competiciones</a>
+        </div>
+      </section>
+
+      <section id="competiciones" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Temporada 2025/26</span>
+            <h2>Competiciones</h2>
+            <p>Consulta las principales categorías del fútbol extremeño.</p>
+          </div>
+
+          <div id="competition-list" class="competition-grid">
+            <!-- Las competiciones se generan desde main.js -->
+          </div>
+        </div>
+      </section>
+
+      <section id="resultados" class="section section-muted">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Jornada reciente</span>
+            <h2>Últimos resultados</h2>
+            <p>Resultados de ejemplo para preparar la estructura de la aplicación.</p>
+          </div>
+
+          <div id="results-list" class="results-list">
+            <!-- Los resultados se generan desde main.js -->
+          </div>
+        </div>
+      </section>
+
+      <section id="clasificacion" class="section">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Primera Extremeña</span>
+            <h2>Clasificación</h2>
+            <p>Tabla provisional de ejemplo.</p>
+          </div>
+
+          <div class="table-wrapper">
+            <table class="standings-table">
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Equipo</th>
+                  <th>J</th>
+                  <th>G</th>
+                  <th>E</th>
+                  <th>P</th>
+                  <th>GF</th>
+                  <th>GC</th>
+                  <th>Pts</th>
+                </tr>
+              </thead>
+              <tbody id="standings-body">
+                <!-- La clasificación se genera desde main.js -->
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section id="equipos" class="section section-muted">
+        <div class="container">
+          <div class="section-heading">
+            <span class="eyebrow">Fútbol extremeño</span>
+            <h2>Equipos</h2>
+            <p>Próximamente podremos consultar plantillas y fichas de cada club.</p>
+          </div>
+
+          <div id="teams-list" class="teams-grid">
+            <!-- Los equipos se generan desde main.js -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-inner">
+        <div>
+          <strong>Fútbol Extremeño</strong>
+          <p>Proyecto dedicado al fútbol modesto de Extremadura.</p>
+        </div>
+
+        <p>© 2026 Fútbol Extremeño</p>
+      </div>
+    </footer>
+
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
