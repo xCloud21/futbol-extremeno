@@ -1,0 +1,20 @@
+[
+    {
+        "id": "primera-extremena-2026-27-grupo-1",
+        "seasonId": "2026-27",
+        "competitionId": "primera-extremena",
+        "name": "Grupo 1"
+    },
+    {
+        "id": "primera-extremena-2026-27-grupo-2",
+        "seasonId": "2026-27",
+        "competitionId": "primera-extremena",
+        "name": "Grupo 2"
+    },
+    {
+        "id": "segunda-extremena-2026-27-grupo-1",
+        "seasonId": "2026-27",
+        "competitionId": "segunda-extremena",
+        "name": "Grupo 1"
+    }
+]

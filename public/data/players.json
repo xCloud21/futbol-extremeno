@@ -1,0 +1,12 @@
+[
+    {
+        "id": "player-001",
+        "name": "Carlos Martín",
+        "position": "Portero"
+    },
+    {
+        "id": "player-002",
+        "name": "David Sánchez",
+        "position": "Defensa"
+    }
+]

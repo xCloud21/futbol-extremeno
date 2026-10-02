@@ -54,13 +54,16 @@
       <section id="competiciones" class="section">
         <div class="container">
           <div class="section-heading">
-            <span class="eyebrow">Temporada 2025/26</span>
+            <span id="current-season-label" class="eyebrow">
+              Temporada
+            </span>
             <h2>Competiciones</h2>
-            <p>Consulta las principales categorías del fútbol extremeño.</p>
+            <p>
+              Consulta las competiciones y grupos de la temporada actual.
+            </p>
           </div>
-
           <div id="competition-list" class="competition-grid">
-            <!-- Las competiciones se generan desde main.js -->
+            <!-- Se genera desde main.js -->
           </div>
         </div>
       </section>
@@ -82,9 +85,15 @@
       <section id="clasificacion" class="section">
         <div class="container">
           <div class="section-heading">
-            <span class="eyebrow">Primera Extremeña</span>
+            <span id="standings-competition-label" class="eyebrow">
+              Primera Extremeña
+            </span>
+
             <h2>Clasificación</h2>
-            <p>Tabla provisional de ejemplo.</p>
+
+            <p id="standings-group-label">
+              Grupo 1
+            </p>
           </div>
 
           <div class="table-wrapper">
@@ -99,11 +108,13 @@
                   <th>P</th>
                   <th>GF</th>
                   <th>GC</th>
+                  <th>DG</th>
                   <th>Pts</th>
                 </tr>
               </thead>
+
               <tbody id="standings-body">
-                <!-- La clasificación se genera desde main.js -->
+                <!-- Se genera desde main.js -->
               </tbody>
             </table>
           </div>

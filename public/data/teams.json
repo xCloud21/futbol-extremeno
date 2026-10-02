@@ -1,0 +1,42 @@
+[
+    {
+        "id": "cd-sierra-verde",
+        "name": "CD Sierra Verde",
+        "shortName": "Sierra Verde",
+        "city": "Cáceres",
+        "province": "Cáceres",
+        "logo": "/images/teams/cd-sierra-verde.png"
+    },
+    {
+        "id": "atletico-vegas",
+        "name": "Atlético Vegas",
+        "shortName": "Atlético Vegas",
+        "city": "Mérida",
+        "province": "Badajoz",
+        "logo": "/images/teams/atletico-vegas.png"
+    },
+    {
+        "id": "cp-guarena",
+        "name": "Club Polideportivo Guareña",
+        "shortName": "CP Guareña",
+        "city": "Guareña",
+        "province": "Badajoz",
+        "logo": "/images/teams/cp-guarena.png"
+    },
+    {
+        "id": "ad-plasencia",
+        "name": "Asociacion Deportiva Plasencia",
+        "shortName": "AD Plasencia",
+        "city": "Plasencia",
+        "province": "Caceres",
+        "logo": "/images/teams/atletico-vegas.png"
+    },
+    {
+        "id": "cd-coria",
+        "name": "Club Deportivo Coria",
+        "shortName": "CD Coria",
+        "city": "Coria",
+        "province": "Caceres",
+        "logo": "/images/teams/cd-coria.png"
+    }
+]

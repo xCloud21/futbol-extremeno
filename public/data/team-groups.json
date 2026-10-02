@@ -1,0 +1,32 @@
+[
+    {
+        "id": "tg-001",
+        "seasonId": "2026-27",
+        "groupId": "primera-extremena-2026-27-grupo-1",
+        "teamId": "cd-sierra-verde"
+    },
+    {
+        "id": "tg-002",
+        "seasonId": "2026-27",
+        "groupId": "primera-extremena-2026-27-grupo-1",
+        "teamId": "cp-guarena"
+    },
+    {
+        "id": "tg-003",
+        "seasonId": "2026-27",
+        "groupId": "segunda-extremena-2026-27-grupo-1",
+        "teamId": "ad-plasencia"
+    },
+    {
+        "id": "tg-004",
+        "seasonId": "2026-27",
+        "groupId": "primera-extremena-2026-27-grupo-1",
+        "teamId": "cd-coria"
+    },
+    {
+        "id": "tg-004",
+        "seasonId": "2026-27",
+        "groupId": "primera-extremena-2026-27-grupo-2",
+        "teamId": "atletico-vegas"
+    }
+]

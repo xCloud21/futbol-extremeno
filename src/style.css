@@ -20,6 +20,14 @@ html {
 body {
   margin: 0;
   min-width: 320px;
+  background: linear-gradient(
+    135deg,
+    #006633 0%,
+    #4f8f70 25%,
+    #ffffff 50%,
+    #777777 75%,
+    #000000 100%
+  );
 }
 
 a {
@@ -208,6 +216,12 @@ button {
 .team-card p {
   color: #718078;
   font-size: 0.88rem;
+}
+.competition-groups button{
+    background-color: mediumseagreen;
+    color: black;
+    border-radius: 12px;
+    cursor: pointer;
 }
 
 /* Results */

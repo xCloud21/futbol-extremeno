@@ -1,0 +1,12 @@
+[
+    {
+        "id": "primera-extremena",
+        "name": "Primera Extremeña",
+        "type": "league"
+    },
+    {
+        "id": "segunda-extremena",
+        "name": "Segunda Extremeña",
+        "type": "league"
+    }
+]
