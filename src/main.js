@@ -352,6 +352,7 @@ function renderStandings(groupId) {
 
 function renderTeams(groupId) {
   const container = document.querySelector("#teams-list");
+  const group = getGroup(groupId);
 
   if (!container) return;
 
@@ -368,7 +369,9 @@ function renderTeams(groupId) {
       const team = getTeam(relation.teamId);
 
       return `
-        <article class="team-card">
+        <article class="team-card" data-team-id="${team.id}" data-group-id="${groupId}"
+          data-season-id="${season.id}"
+          data-competition-id="${group.competitionId}" style="cursor: pointer;">
           <div class="team-logo">
             ${
               team.logo
@@ -386,6 +389,99 @@ function renderTeams(groupId) {
         </article>
       `;
     })
+    .join("");
+}
+
+function openTeamModal({
+  teamId,
+  groupId,
+  seasonId,
+  competitionId
+}) {
+
+  const team = getTeam(teamId);
+  const group = getGroup(groupId);
+  const competition = getCompetition(competitionId);
+
+  if (!team) {
+    return;
+  }
+
+  const modal = document.querySelector("#team-modal");
+
+  document.querySelector("#team-modal-logo").src =
+    team.logo || "";
+
+  document.querySelector("#team-modal-logo").alt =
+    `Escudo de ${team.name}`;
+
+  document.querySelector("#team-modal-name").textContent =
+    team.name;
+
+  document.querySelector("#team-modal-location").textContent =
+    `${team.city} · ${team.province}`;
+
+  document.querySelector("#team-modal-city").textContent =
+    team.city || "-";
+
+  document.querySelector("#team-modal-province").textContent =
+    team.province || "-";
+
+  document.querySelector("#team-modal-competition-info").textContent =
+    competition?.name || "-";
+
+  document.querySelector("#team-modal-group").textContent =
+    group?.name || "-";
+
+
+  renderTeamSquad({
+    teamId,
+    seasonId
+  });
+
+  modal.showModal();
+}
+
+function renderTeamSquad({ teamId, seasonId }) {
+  const container = document.querySelector("#team-modal-squad");
+
+  const relations = state.teamPlayers.filter(
+    (relation) => relation.teamId === teamId && relation.seasonId === seasonId,
+  );
+
+  const players = relations.map((relation) => {
+      const player = state.players.find(
+        (player) => player.id === relation.playerId,
+      );
+
+      if (!player) {
+        return null;
+      }
+
+      return {
+        ...player,
+        shirtNumber: relation.shirtNumber,
+      };
+    })
+    .filter(Boolean);
+
+  container.innerHTML = players
+    .map(
+      (player) => `
+      <article class="player-card">
+
+        <span class="player-card__number">
+          ${player.shirtNumber ?? "-"}
+        </span>
+
+        <div class="player-card__info">
+          <strong>${player.name}</strong>
+          <span>${player.position}</span>
+        </div>
+
+      </article>
+    `,
+    )
     .join("");
 }
 
@@ -455,3 +551,52 @@ async function init() {
 }
 
 init();
+
+document.addEventListener("click", function (event) {
+  // Comprobamos si lo que el usuario clickeó es nuestro botón de grupo
+  const button = event.target.closest(".group-button");
+  const teamCard = event.target.closest(".team-card");
+  const closeButton = document.querySelector("#team-modal-close");
+
+  if (button) {
+    // Si existe el botón, extraemos los datos directamente de su dataset
+    const groupId = button.dataset.groupId;
+
+    // Aquí puedes llamar a cualquier otra función interna de tu código
+    renderGroupData(groupId);
+  } else if (teamCard) {
+    // Ha clickado en la informacion del club, redirigimos al listener para abrir modal
+    document.dispatchEvent(
+      new CustomEvent("team:selected", {
+        detail: {
+          teamId: teamCard.dataset.teamId,
+          groupId: teamCard.dataset.groupId,
+          seasonId: teamCard.dataset.seasonId,
+          competitionId: teamCard.dataset.competitionId,
+        },
+      }),
+    );
+  } else if (closeButton) {
+    const modal = document.querySelector("#team-modal");
+    if (event.target.id === 'team-modal-close') {
+      modal.close();
+    }
+  }
+});
+
+document.addEventListener("team:selected", event => {
+    const {
+      teamId,
+      groupId,
+      seasonId,
+      competitionId
+    } = event.detail;
+
+    openTeamModal({
+      teamId,
+      groupId,
+      seasonId,
+      competitionId
+    });
+
+});

@@ -149,4 +149,63 @@
 
     <script type="module" src="/src/main.js"></script>
   </body>
+
+  <!-- MODAL para informacion de cada equipo (jugadores, ficha del club,...) --> 
+  <dialog id="team-modal" class="team-modal">
+  <div class="team-modal__content">
+    <header class="team-modal__header">
+      <div class="team-modal__club">
+        <img
+          id="team-modal-logo"
+          src=""
+          alt=""
+        >
+        <div>
+          <span id="team-modal-competition"></span>
+          <h2 id="team-modal-name"></h2>
+          <p id="team-modal-location"></p>
+        </div>
+      </div>
+      <button
+        type="button"
+        id="team-modal-close"
+        class="team-modal__close"
+        aria-label="Cerrar"
+      >
+        ×
+      </button>
+    </header>
+    <div class="team-modal__body">
+      <section class="team-modal__section">
+        <h3>Ficha del club</h3>
+        <dl class="team-info">
+          <div>
+            <dt>Localidad</dt>
+            <dd id="team-modal-city">-</dd>
+          </div>
+          <div>
+            <dt>Provincia</dt>
+            <dd id="team-modal-province">-</dd>
+          </div>
+          <div>
+            <dt>Competición</dt>
+            <dd id="team-modal-competition-info">-</dd>
+          </div>
+          <div>
+            <dt>Grupo</dt>
+            <dd id="team-modal-group">-</dd>
+          </div>
+        </dl>
+      </section>
+      <section class="team-modal__section">
+        <h3>Plantilla</h3>
+        <div
+          id="team-modal-squad"
+          class="team-squad"
+        >
+          <!-- La plantilla se genera dinámicamente -->
+        </div>
+      </section>
+    </div>
+  </div>
 </html>
